@@ -125,6 +125,9 @@ class Linked_Lest_Tester(unittest.TestCase):
     # self.__string_list.insert_element_at('and', 2)
     # # self.assertEqual('[ Data, Structures, and, Algorithms ]', str(self.__string_list))
   
+
+
+
   def test_get_empty_length(self):
     # # self.assertEqual(0, len(self.__string_list))
     self.assertEqual(0, len(self.__dq))
@@ -177,7 +180,14 @@ class Linked_Lest_Tester(unittest.TestCase):
     self.__dq.push_back(2)
     self.assertEqual(3, len(self.__dq))
 
-  def test_pop_front_leaving_zero_returned_value(self):
+
+
+
+
+
+
+
+  def test_push_pop_front_leaving_zero_returned_value(self):
     # self.__string_list.append_element('Victory')
     # returned = self.__string_list.remove_element_at(0)
     # self.assertEqual('Victory', returned)
@@ -185,7 +195,7 @@ class Linked_Lest_Tester(unittest.TestCase):
     returned = self.__dq.pop_front()
     self.assertEqual(1, returned)
 
-  def test_pop_back_leaving_zero_returned_value(self):
+  def test_push_pop_back_leaving_zero_returned_value(self):
     # self.__string_list.append_element('Victory')
     # returned = self.__string_list.remove_element_at(0)
     # self.assertEqual('Victory', returned)
@@ -215,7 +225,7 @@ class Linked_Lest_Tester(unittest.TestCase):
     # self.__string_list.remove_element_at(0)
     # # self.assertEqual('[ ]', str(self.__string_list))
 
-  def test_pop_front_leaving_zero_remaining_list(self):
+  def test_push_pop_front_leaving_zero_remaining_list(self):
     # self.__string_list.append_element('Victory')
     # returned = self.__string_list.remove_element_at(0)
     # self.assertEqual('Victory', returned)
@@ -223,7 +233,7 @@ class Linked_Lest_Tester(unittest.TestCase):
     returned = self.__dq.pop_front()
     self.assertEqual('[ ]', str(self.__dq))
 
-  def test_pop_back_leaving_zero_remaining_list(self):
+  def test_push_pop_back_leaving_zero_remaining_list(self):
     # self.__string_list.append_element('Victory')
     # returned = self.__string_list.remove_element_at(0)
     # self.assertEqual('Victory', returned)
@@ -246,21 +256,77 @@ class Linked_Lest_Tester(unittest.TestCase):
     self.__dq.push_front(1)
     returned = self.__dq.pop_back()
     self.assertEqual('[ ]', str(self.__dq))
-
   
-
-  def test_remove_head_leaving_zero_length(self):
-    pass
+  def test_push_pop_front_leaving_zero_length(self):
     # self.__string_list.append_element('Victory')
     # self.__string_list.remove_element_at(0)
     # # self.assertEqual(0, len(self.__string_list))
+    self.__dq.push_front(0)
+    self.__dq.pop_front()
+    self.assertEqual(0, len(self.__dq))
 
-  def test_remove_head_leaving_one_returned_value(self):
-    pass
-    # self.__string_list.append_element('Data')
-    # self.__string_list.append_element('Structures')
+  def test_push_pop_back_leaving_zero_length(self):
+    # self.__string_list.append_element('Victory')
+    # self.__string_list.remove_element_at(0)
+    # # self.assertEqual(0, len(self.__string_list))
+    self.__dq.push_back(0)
+    self.__dq.pop_back()
+    self.assertEqual(0, len(self.__dq))
+
+  def test_push_back_pop_front_leaving_zero_length(self):
+    # self.__string_list.append_element('Victory')
+    # self.__string_list.remove_element_at(0)
+    # # self.assertEqual(0, len(self.__string_list))
+    self.__dq.push_back(0)
+    self.__dq.pop_front()
+    self.assertEqual(0, len(self.__dq))
+
+  def test_push_front_pop_back_leaving_zero_length(self):
+    # self.__string_list.append_element('Victory')
+    # self.__string_list.remove_element_at(0)
+    # # self.assertEqual(0, len(self.__string_list))
+    self.__dq.push_front(0)
+    self.__dq.pop_back()
+    self.assertEqual(0, len(self.__dq))
+
+
+
+
+  def test_push_pop_front_leaving_one_returned_value(self):
+    # self.__string_list.append_element('Victory')
     # returned = self.__string_list.remove_element_at(0)
-    # self.assertEqual('Data', returned)
+    # self.assertEqual('Victory', returned)
+    self.__dq.push_front(0)
+    self.__dq.push_front(1)
+    returned = self.__dq.pop_front()
+    self.assertEqual(1, returned)
+
+  def test_push_pop_back_leaving_one_returned_value(self):
+    # self.__string_list.append_element('Victory')
+    # returned = self.__string_list.remove_element_at(0)
+    # self.assertEqual('Victory', returned)
+    self.__dq.push_back(0)
+    self.__dq.push_back(1)
+    returned = self.__dq.pop_back()
+    self.assertEqual(1, returned)
+
+  def test_push_back_pop_front_leaving_one_returned_value(self):
+    # self.__string_list.append_element('Victory')
+    # returned = self.__string_list.remove_element_at(0)
+    # self.assertEqual('Victory', returned)
+    self.__dq.push_back(0)
+    self.__dq.push_back(1)
+    returned = self.__dq.pop_front()
+    self.assertEqual(0, returned)
+
+  def test_push_front_pop_back_leaving_one_returned_value(self):
+    # self.__string_list.append_element('Victory')
+    # returned = self.__string_list.remove_element_at(0)
+    # self.assertEqual('Victory', returned)
+    self.__dq.push_front(0)
+    self.__dq.push_front(1)
+    returned = self.__dq.pop_back()
+    self.assertEqual(0, returned)
 
   def test_remove_head_leaving_one_remaining_list(self):
     pass
@@ -269,12 +335,84 @@ class Linked_Lest_Tester(unittest.TestCase):
     # self.__string_list.remove_element_at(0)
     # # self.assertEqual('[ Structures ]', str(self.__string_list))
 
+  def test_push_pop_front_leaving_one_remaining_list(self):
+    # self.__string_list.append_element('Victory')
+    # returned = self.__string_list.remove_element_at(0)
+    # self.assertEqual('Victory', returned)
+    self.__dq.push_front(0)
+    self.__dq.push_front(1)
+    returned = self.__dq.pop_front()
+    self.assertEqual('[ 0 ]', str(self.__dq))
+
+  def test_push_pop_back_leaving_one_remaining_list(self):
+    # self.__string_list.append_element('Victory')
+    # returned = self.__string_list.remove_element_at(0)
+    # self.assertEqual('Victory', returned)
+    self.__dq.push_back(0)
+    self.__dq.push_back(1)
+    returned = self.__dq.pop_back()
+    self.assertEqual('[ 0 ]', str(self.__dq))
+
+  def test_push_back_pop_front_leaving_one_remaining_list(self):
+    # self.__string_list.append_element('Victory')
+    # returned = self.__string_list.remove_element_at(0)
+    # self.assertEqual('Victory', returned)
+    self.__dq.push_back(0)
+    self.__dq.push_back(1)
+    returned = self.__dq.pop_front()
+    self.assertEqual('[ 1 ]', str(self.__dq))
+
+  def test_push_front_pop_back_leaving_one_remaining_list(self):
+    # self.__string_list.append_element('Victory')
+    # returned = self.__string_list.remove_element_at(0)
+    # self.assertEqual('Victory', returned)
+    self.__dq.push_front(0)
+    self.__dq.push_front(1)
+    returned = self.__dq.pop_back()
+    self.assertEqual('[ 1 ]', str(self.__dq))
+
   def test_removeHeadLeavingOneLength(self):
     pass
     # self.__string_list.append_element('Data')
     # self.__string_list.append_element('Structures')
     # self.__string_list.remove_element_at(0)
     # # self.assertEqual(1, len(self.__string_list))
+
+  def test_push_pop_front_leaving_one_length(self):
+    # self.__string_list.append_element('Victory')
+    # self.__string_list.remove_element_at(0)
+    # # self.assertEqual(0, len(self.__string_list))
+    self.__dq.push_front(0)
+    self.__dq.push_front(1)
+    self.__dq.pop_front()
+    self.assertEqual(1, len(self.__dq))
+
+  def test_push_pop_back_leaving_one_length(self):
+    # self.__string_list.append_element('Victory')
+    # self.__string_list.remove_element_at(0)
+    # # self.assertEqual(0, len(self.__string_list))
+    self.__dq.push_back(0)
+    self.__dq.push_back(1)
+    self.__dq.pop_back()
+    self.assertEqual(1, len(self.__dq))
+
+  def test_push_back_pop_front_leaving_one_length(self):
+    # self.__string_list.append_element('Victory')
+    # self.__string_list.remove_element_at(0)
+    # # self.assertEqual(0, len(self.__string_list))
+    self.__dq.push_back(0)
+    self.__dq.push_back(1)
+    self.__dq.pop_front()
+    self.assertEqual(1, len(self.__dq))
+
+  def test_push_front_pop_back_leaving_one_length(self):
+    # self.__string_list.append_element('Victory')
+    # self.__string_list.remove_element_at(0)
+    # # self.assertEqual(0, len(self.__string_list))
+    self.__dq.push_front(0)
+    self.__dq.push_front(1)
+    self.__dq.pop_back()
+    self.assertEqual(1, len(self.__dq))
 
   def test_remove_tail_leaving_one_returned_value(self):
     pass
@@ -320,7 +458,14 @@ class Linked_Lest_Tester(unittest.TestCase):
     # self.__string_list.append_element('Rocks')
     # self.__string_list.remove_element_at(1)
     # # self.assertEqual(2, len(self.__string_list))
-  
+
+
+
+
+
+
+
+
   def test_get_head_with_one_element(self):
     pass
     # self.__string_list.append_element('Victory')
