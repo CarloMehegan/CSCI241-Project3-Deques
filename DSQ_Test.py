@@ -499,7 +499,6 @@ class Linked_Lest_Tester(unittest.TestCase):
     self.assertEqual('[ 1 ]', str(self.__dq))
 
   def test_peek_front_with_one_element_length(self):
-    pass
     # self.__string_list.append_element('Victory')
     # self.__string_list.get_element_at(0)
     # # self.assertEqual(1, len(self.__string_list))
@@ -508,7 +507,6 @@ class Linked_Lest_Tester(unittest.TestCase):
     self.assertEqual(1, len(self.__dq))
 
   def test_peek_back_with_one_element_length(self):
-    pass
     # self.__string_list.append_element('Victory')
     # self.__string_list.get_element_at(0)
     # # self.assertEqual(1, len(self.__string_list))
@@ -517,7 +515,6 @@ class Linked_Lest_Tester(unittest.TestCase):
     self.assertEqual(1, len(self.__dq))
 
   def test_peek_back_with_two_elements(self):
-    pass
     # self.__string_list.append_element('Data')
     # self.__string_list.append_element('Structures')
     # returned = self.__string_list.get_element_at(1)
@@ -528,7 +525,6 @@ class Linked_Lest_Tester(unittest.TestCase):
     self.assertEqual(1, returned)
 
   def test_peek_back_with_two_elements_remaining(self):
-    pass
     # self.__string_list.append_element('Data')
     # self.__string_list.append_element('Structures')
     # self.__string_list.get_element_at(1)
@@ -539,7 +535,6 @@ class Linked_Lest_Tester(unittest.TestCase):
     self.assertEqual('[ 0, 1 ]', str(self.__dq))
 
   def test_get_tail_with_two_elements_length(self):
-    pass
     # self.__string_list.append_element('Data')
     # self.__string_list.append_element('Structures')
     # self.__string_list.get_element_at(1)
