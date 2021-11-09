@@ -81,6 +81,10 @@ class Array_Deque(Deque):
   def pop_front(self):
     # replace pass with your implementation. Do not reduce the capacity.
 
+    #check if array is empty, if it is, raise error
+    if (self.__length == 0):
+      raise IndexError
+
     #pop operations return the value that is removed
     returned = self.__contents[self.__front_index]
     #change the front index of the deque to (front_index + 1) % self.__capacity
@@ -108,6 +112,10 @@ class Array_Deque(Deque):
   
   def pop_back(self):
     # replace pass with your implementation. Do not reduce the capacity.
+
+    #check if array is empty, if it is, raise error
+    if (self.__length == 0):
+      raise IndexError
 
     #pop operations return the value that is removed
     returned = self.__contents[self.__back_index]
