@@ -6,24 +6,22 @@ class Stack:
     self.__dq = get_deque()
 
   def __str__(self):
-    # TODO replace pass with your implementation.
-    pass
+    #string of a stack should look the same as a deque
+    #the "top" of the stack will be at the end of the string
+      #and the "bottom" will be at the start
+    return str(self.__dq)
 
   def __len__(self):
-    # TODO replace pass with your implementation.
-    pass
+    return len(self.__dq)
 
   def push(self, val):
-    # TODO replace pass with your implementation.
-    pass
+    self.__dq.push_back(val)
 
   def pop(self):
-    # TODO replace pass with your implementation.
-    pass
+    return self.__dq.pop_back()
 
   def peek(self):
-    # TODO replace pass with your implementation.
-    pass
+    return self.__dq.peek_back()
 
 # Unit tests make the main section unneccessary.
 #if __name__ == '__main__':
