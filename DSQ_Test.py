@@ -744,53 +744,76 @@ class Linked_Lest_Tester(unittest.TestCase):
     # # self.assertEqual(3, len(self.__string_list))
     # self.assertEqual(3, len(ll))
   
+
+
+
+
+
+
+
   def test_one_None_str(self):
-    pass
     # self.__string_list.append_element(None)
     # # self.assertEqual('[ None ]', str(self.__string_list))
+    self.__dq.push_front(None)
+    self.assertEqual('[ None ]', str(self.__dq))
   
   def test_one_None_len(self):
-    pass
     # self.__string_list.append_element(None)
     # # self.assertEqual(1, len(self.__string_list))
+    self.__dq.push_front(None)
+    self.assertEqual(1, len(self.__dq))
 
   def test_five_None_str(self):
-    pass
     # for _ in range(5):
       # self.__string_list.append_element(None)
     # # self.assertEqual('[ None, None, None, None, None ]', str(self.__string_list))
+    for _ in range(5):
+      self.__dq.push_front(None)
+    self.assertEqual('[ None, None, None, None, None ]', str(self.__dq))
   
   def test_five_None_len(self):
-    pass
     # for _ in range(5):
       # self.__string_list.append_element(None)
     # # self.assertEqual(5, len(self.__string_list))
+    for _ in range(5):
+      self.__dq.push_front(None)
+    self.assertEqual(5, len(self.__dq))
 
   def test_two_end_None_str(self):
-    pass
     # self.__string_list.append_element('Data')
     # self.__string_list.append_element(None)
     # # self.assertEqual('[ Data, None ]', str(self.__string_list))
+    self.__dq.push_front(None)
+    self.__dq.push_front(0)
+    self.assertEqual('[ 0, None ]', str(self.__dq))
   
   def test_two_end_None_len(self):
-    pass
     # self.__string_list.append_element('Data')
     # self.__string_list.append_element(None)
     # # self.assertEqual(2, len(self.__string_list))
+    self.__dq.push_front(None)
+    self.__dq.push_front(0)
+    self.assertEqual(2, len(self.__dq))
   
   def test_three_insert_None_head_str(self):
-    pass
     # self.__string_list.append_element('Data')
     # self.__string_list.append_element('Structures')
     # self.__string_list.insert_element_at(None,0)
     # # self.assertEqual('[ None, Data, Structures ]', str(self.__string_list))
+    self.__dq.push_front(1)
+    self.__dq.push_front(0)
+    self.__dq.push_front(None)
+    self.assertEqual('[ None, 0, 1 ]', str(self.__dq))
   
   def test_three_insert_None_head_len(self):
-    pass
     # self.__string_list.append_element('Data')
     # self.__string_list.append_element('Structures')
     # self.__string_list.insert_element_at(None,0)
     # # self.assertEqual(3, len(self.__string_list))
+    self.__dq.push_front(1)
+    self.__dq.push_front(0)
+    self.__dq.push_front(None)
+    self.assertEqual(3, len(self.__dq))
   
   def test_three_insert_None_middle_str(self):
     pass
@@ -807,18 +830,24 @@ class Linked_Lest_Tester(unittest.TestCase):
     # # self.assertEqual(3, len(self.__string_list))
   
   def test_three_append_None_str(self):
-    pass
     # self.__string_list.append_element('Data')
     # self.__string_list.append_element('Structures')
     # self.__string_list.append_element(None)
     # # self.assertEqual('[ Data, Structures, None ]', str(self.__string_list))
+    self.__dq.push_front(None)
+    self.__dq.push_front(1)
+    self.__dq.push_front(0)
+    self.assertEqual('[ 0, 1, None ]', str(self.__dq))
   
   def test_three_append_None_len(self):
-    pass
     # self.__string_list.append_element('Data')
     # self.__string_list.append_element('Structures')
     # self.__string_list.append_element(None)
     # # self.assertEqual(3, len(self.__string_list))
+    self.__dq.push_front(None)
+    self.__dq.push_front(1)
+    self.__dq.push_front(0)
+    self.assertEqual(3, len(self.__dq))
   
   
 
