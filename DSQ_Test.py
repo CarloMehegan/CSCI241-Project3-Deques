@@ -4,43 +4,103 @@ from Deque_Generator import get_deque
 class Linked_Lest_Tester(unittest.TestCase):
 
   def setUp(self):
-    pass
-    # self.__dq = get_deque()
+    self.__dq = get_deque(0)
+    self.__lldq = get_deque(0)
+    self.__adq = get_deque(1)
 
-  def test_empty_list_string(self):
-    pass
+
+  # def test_stringify_LL_DSQ(self):
+  #   print(str(self.__lldq))
+  #   self.assertEqual('[ ]', str(self.__lldq), 'Empty LLdq should print as "[ ]"')
+  
+  # def test_push_front_to_LL_DSQ(self):
+  #   self.__lldq.push_front(0)
+
+  # def test_push_front_multiple_to_LL_DSQ(self):
+  #   self.__lldq.push_front(0)
+  #   self.__lldq.push_front(1)
+  #   self.__lldq.push_front(2)
+  #   self.__lldq.push_front(3)
+
+  # def test_push_front_and_pop_front_from_LL_DSQ(self):
+  #   self.__lldq.push_front(0)
+  #   self.__lldq.pop_front()
+
+  # def test_push_front_and_pop_front_multiple_from_LL_DSQ(self):
+  #   self.__lldq.push_front(0)
+  #   self.__lldq.push_front(1)
+  #   self.__lldq.push_front(2)
+  #   self.__lldq.push_front(3)
+  #   self.__lldq.pop_front()
+  #   self.__lldq.pop_front()
+  #   self.__lldq.pop_front()
+  #   self.__lldq.pop_front()
+
+  # def test_push_front_and_pop_front_then_push_front_again_LL_DSQ(self):
+  #   self.__lldq.push_front(0)
+  #   self.__lldq.push_front(1)
+  #   self.__lldq.push_front(2)
+  #   self.__lldq.push_front(3)
+  #   self.__lldq.pop_front()
+  #   self.__lldq.pop_front()
+  #   self.__lldq.pop_front()
+  #   self.__lldq.pop_front()
+  #   self.__lldq.push_front(0)
+  #   self.__lldq.push_front(1)
+  #   self.__lldq.push_front(2)
+  #   self.__lldq.push_front(3)
+
+
+  def test_empty_dq_string(self):
     # # self.assertEqual('[ ]', str(self.__string_list), 'Empty list should print as "[ ]"')
+    print(str(self.__dq))
+    self.assertEqual('[ ]', str(self.__dq), 'Empty LLdq should print as "[ ]"')
 
-  def test_add_head_empty(self):
-    pass
+  def test_push_front_empty(self):
+    self.__dq.push_front(0)
+    self.assertEqual('[ 0 ]', str(self.__dq))
+
+  def test_push_back_empty(self):
     # self.__string_list.append_element('Victory')
     # # self.assertEqual('[ Victory ]', str(self.__string_list))
+    self.__dq.push_back(0)
+    self.assertEqual('[ 0 ]', str(self.__dq))
 
-  def test_add_tail_with_one(self):
-    pass
-    # self.__string_list.append_element('Data')
-    # self.__string_list.append_element('Structures')
-    # # self.assertEqual('[ Data, Structures ]', str(self.__string_list))
-
-  def test_add_head_with_one(self):
-    pass
+  def test_push_front_with_one(self):
     # self.__string_list.append_element('Structures')
     # self.__string_list.insert_element_at('Data', 0)
     # # self.assertEqual('[ Data, Structures ]', str(self.__string_list))
+    self.__dq.push_front(0)
+    self.__dq.push_front(1)
+    self.assertEqual('[ 1, 0 ]', str(self.__dq))
 
-  def test_add_head_with_two(self):
-    pass
+  def test_push_back_with_one(self):
+    # self.__string_list.append_element('Data')
+    # self.__string_list.append_element('Structures')
+    # # self.assertEqual('[ Data, Structures ]', str(self.__string_list))
+    self.__dq.push_back(0)
+    self.__dq.push_back(1)
+    self.assertEqual('[ 0, 1 ]', str(self.__dq))
+
+  def test_push_front_with_two(self):
     # self.__string_list.append_element('Structures')
     # self.__string_list.append_element('Rocks')
     # self.__string_list.insert_element_at('Data', 0)
     # # self.assertEqual('[ Data, Structures, Rocks ]', str(self.__string_list))
+    self.__dq.push_front(0)
+    self.__dq.push_front(1)
+    self.__dq.push_front(2)
+    self.assertEqual('[ 2, 1, 0 ]', str(self.__dq))
 
-  def test_add_tail_with_two(self):
-    pass
+  def test_push_back_with_two(self):
     # self.__string_list.append_element('Data')
     # self.__string_list.append_element('Structures')
     # self.__string_list.append_element('Rocks')
     # # self.assertEqual('[ Data, Structures, Rocks ]', str(self.__string_list))
+    self.__dq.push_back(0)
+    self.__dq.push_back(1)
+    self.__dq.push_back(2)
+    self.assertEqual('[ 0, 1, 2 ]', str(self.__dq))
 
   def test_add_middle_with_two(self):
     pass
@@ -66,32 +126,62 @@ class Linked_Lest_Tester(unittest.TestCase):
     # # self.assertEqual('[ Data, Structures, and, Algorithms ]', str(self.__string_list))
   
   def test_get_empty_length(self):
-    pass
     # # self.assertEqual(0, len(self.__string_list))
+    self.assertEqual(0, len(self.__dq))
 
-  def test_get_one_length(self):
+  def test_get_one_length_push_front(self):
     pass
     # self.__string_list.append_element('Victory')
     # # self.assertEqual(1, len(self.__string_list))
+    self.__dq.push_front(0)
+    self.assertEqual(1, len(self.__dq))
 
-  def test_get_two_length_append(self):
+  def test_get_one_length_push_back(self):
+    pass
+    # self.__string_list.append_element('Victory')
+    # # self.assertEqual(1, len(self.__string_list))
+    self.__dq.push_back(0)
+    self.assertEqual(1, len(self.__dq))
+
+  def test_get_two_length_push_front(self):
     pass
     # self.__string_list.append_element('Data')
     # self.__string_list.append_element('Structures')
     # # self.assertEqual(2, len(self.__string_list))
+    self.__dq.push_front(0)
+    self.__dq.push_front(1)
+    self.assertEqual(2, len(self.__dq))
 
-  def test_get_two_length_insert(self):
+  def test_get_two_length_push_back(self):
     pass
     # self.__string_list.append_element('Structures')
     # self.__string_list.insert_element_at('Data', 0)
     # # self.assertEqual(2, len(self.__string_list))
+    self.__dq.push_back(0)
+    self.__dq.push_back(1)
+    self.assertEqual(2, len(self.__dq))
 
-  def test_get_three_length_insert(self):
+  def test_get_three_length_push_front(self):
     pass
     # self.__string_list.append_element('Data')
     # self.__string_list.append_element('Rocks')
     # self.__string_list.insert_element_at('Structures', 1)
     # # self.assertEqual(3, len(self.__string_list))
+    self.__dq.push_front(0)
+    self.__dq.push_front(1)
+    self.__dq.push_front(2)
+    self.assertEqual(3, len(self.__dq))
+
+  def test_get_three_length_push_back(self):
+    pass
+    # self.__string_list.append_element('Data')
+    # self.__string_list.append_element('Rocks')
+    # self.__string_list.insert_element_at('Structures', 1)
+    # # self.assertEqual(3, len(self.__string_list))
+    self.__dq.push_back(0)
+    self.__dq.push_back(1)
+    self.__dq.push_back(2)
+    self.assertEqual(3, len(self.__dq))
 
   def test_remove_head_leaving_zero_returned_value(self):
     pass

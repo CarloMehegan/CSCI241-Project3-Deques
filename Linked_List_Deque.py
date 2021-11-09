@@ -19,7 +19,11 @@ class Linked_List_Deque(Deque):
   
   def push_front(self, val):
     #insert an element at index 0
-    self.__list.insert_element_at(val, 0)
+    #make sure LL isnt empty
+    if (len(self.__list) == 0):
+      self.__list.append_element(val)
+    else:
+      self.__list.insert_element_at(val, 0)
   
   def pop_front(self):
     #remove element at index 0
