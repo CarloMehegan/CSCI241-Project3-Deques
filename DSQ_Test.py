@@ -1,15 +1,19 @@
 import unittest
 from Deque_Generator import get_deque
+from Queue import Queue
+from Stack import Stack
 
 class Linked_Lest_Tester(unittest.TestCase):
 
   def setUp(self):
-    self.__dq = get_deque(0)
+    self.__dq = get_deque()
+    self.__q = Queue()
+    self.__s = Stack()
 
   def test_empty_dq_string(self):
     # # self.assertEqual('[ ]', str(self.__string_list), 'Empty list should print as "[ ]"')
-    print(str(self.__dq))
-    self.assertEqual('[ ]', str(self.__dq), 'Empty LLdq should print as "[ ]"')
+    # print(str(self.__dq))
+    self.assertEqual('[ ]', str(self.__dq))
 
   def test_push_front_empty(self):
     self.__dq.push_front(0)
@@ -498,8 +502,199 @@ class Linked_Lest_Tester(unittest.TestCase):
     self.__dq.push_front(1)
     self.__dq.push_front(0)
     self.assertEqual(3, len(self.__dq))
+
+
+
+
+
+
+
+#queue tests
+  def test_queue_print_empty(self):
+    self.assertEqual('[ ]', str(self.__q))
+
+  def test_queue_push_one(self):
+    self.__q.enqueue(0)
+    self.assertEqual('[ 0 ]', str(self.__q))
+
+  def test_queue_push_two(self):
+    self.__q.enqueue(0)
+    self.__q.enqueue(1)
+    self.assertEqual('[ 0, 1 ]', str(self.__q))
+
+  def test_queue_push_one_pop_one(self):
+    self.__q.enqueue(0)
+    self.__q.dequeue()
+    self.assertEqual('[ ]', str(self.__q))
+
+  def test_queue_push_two_pop_one(self):
+    self.__q.enqueue(0)
+    self.__q.enqueue(1)
+    self.__q.dequeue()
+    self.assertEqual('[ 1 ]', str(self.__q))
+
+  def test_queue_push_two_pop_two(self):
+    self.__q.enqueue(0)
+    self.__q.enqueue(1)
+    self.__q.dequeue()
+    self.__q.dequeue()
+    self.assertEqual('[ ]', str(self.__q))
+
+  def test_queue_push_one_peek(self):
+    self.__q.enqueue(0)
+    self.assertEqual(0, self.__q.peek())
+
+  def test_queue_push_two_peek(self):
+    self.__q.enqueue(0)
+    self.__q.enqueue(1)
+    self.assertEqual(0, self.__q.peek())
+
+  def test_queue_push_one_pop_one_peek(self):
+    self.__q.enqueue(0)
+    self.__q.dequeue()
+    self.assertEqual(None, self.__q.peek())
+
+  def test_queue_push_two_pop_one_peek(self):
+    self.__q.enqueue(0)
+    self.__q.enqueue(1)
+    self.__q.dequeue()
+    self.assertEqual(1, self.__q.peek())
   
+  def test_queue_push_two_pop_two_peek(self):
+    self.__q.enqueue(0)
+    self.__q.enqueue(1)
+    self.__q.dequeue()
+    self.__q.dequeue()
+    self.assertEqual(None, self.__q.peek())
+
+  def test_queue_push_one_length(self):
+    self.__q.enqueue(0)
+    self.assertEqual(1, len(self.__q))
+
+  def test_queue_push_two_length(self):
+    self.__q.enqueue(0)
+    self.__q.enqueue(1)
+    self.assertEqual(2, len(self.__q))
+
+  def test_queue_push_one_pop_one_length(self):
+    self.__q.enqueue(0)
+    self.__q.dequeue()
+    self.assertEqual(0, len(self.__q))
+
+  def test_queue_push_two_pop_one_length(self):
+    self.__q.enqueue(0)
+    self.__q.enqueue(1)
+    self.__q.dequeue()
+    self.assertEqual(1, len(self.__q))
   
+  def test_queue_push_two_pop_two_length(self):
+    self.__q.enqueue(0)
+    self.__q.enqueue(1)
+    self.__q.dequeue()
+    self.__q.dequeue()
+    self.assertEqual(0, len(self.__q))
+
+#stack and queue tests
+#print empty
+#push one
+#push two
+#push one, pop one
+#push two, pop one
+#push two, pop two
+#push one, peek
+#push two, peek
+#push one, pop one, peek
+#push two, pop one, peek
+#push two, pop two, peek
+#push one, length
+#push two, length
+#push one, pop one, length
+#push two, pop one, length
+#push two, pop two, length
+
+  def test_stack_print_empty(self):
+    self.assertEqual('[ ]', str(self.__s))
+
+  def test_stack_push_one(self):
+    self.__s.push(0)
+    self.assertEqual('[ 0 ]', str(self.__s))
+
+  def test_stack_push_two(self):
+    self.__s.push(0)
+    self.__s.push(1)
+    self.assertEqual('[ 0, 1 ]', str(self.__s))
+
+  def test_stack_push_one_pop_one(self):
+    self.__s.push(0)
+    self.__s.pop()
+    self.assertEqual('[ ]', str(self.__s))
+
+  def test_stack_push_two_pop_one(self):
+    self.__s.push(0)
+    self.__s.push(1)
+    self.__s.pop()
+    self.assertEqual('[ 0 ]', str(self.__s))
+
+  def test_stack_push_two_pop_two(self):
+    self.__s.push(0)
+    self.__s.push(1)
+    self.__s.pop()
+    self.__s.pop()
+    self.assertEqual('[ ]', str(self.__s))
+
+  def test_stack_push_one_peek(self):
+    self.__s.push(0)
+    self.assertEqual(0, self.__s.peek())
+
+  def test_stack_push_two_peek(self):
+    self.__s.push(0)
+    self.__s.push(1)
+    self.assertEqual(1, self.__s.peek())
+
+  def test_stack_push_one_pop_one_peek(self):
+    self.__s.push(0)
+    self.__s.pop()
+    self.assertEqual(None, self.__s.peek())
+
+  def test_stack_push_two_pop_one_peek(self):
+    self.__s.push(0)
+    self.__s.push(1)
+    self.__s.pop()
+    self.assertEqual(0, self.__s.peek())
+  
+  def test_stack_push_two_pop_two_peek(self):
+    self.__s.push(0)
+    self.__s.push(1)
+    self.__s.pop()
+    self.__s.pop()
+    self.assertEqual(None, self.__s.peek())
+
+  def test_stack_push_one_length(self):
+    self.__s.push(0)
+    self.assertEqual(1, len(self.__s))
+
+  def test_stack_push_two_length(self):
+    self.__s.push(0)
+    self.__s.push(1)
+    self.assertEqual(2, len(self.__s))
+
+  def test_stack_push_one_pop_one_length(self):
+    self.__s.push(0)
+    self.__s.pop()
+    self.assertEqual(0, len(self.__s))
+
+  def test_stack_push_two_pop_one_length(self):
+    self.__s.push(0)
+    self.__s.push(1)
+    self.__s.pop()
+    self.assertEqual(1, len(self.__s))
+  
+  def test_stack_push_two_pop_two_length(self):
+    self.__s.push(0)
+    self.__s.push(1)
+    self.__s.pop()
+    self.__s.pop()
+    self.assertEqual(0, len(self.__s))
 
 if __name__ == '__main__':
   unittest.main()
