@@ -31,7 +31,10 @@ class Linked_List_Deque(Deque):
 
   def peek_front(self):
     #get element at index 0
-    return self.__list.get_element_at(0)
+    if len(self.__list) == 0:
+      return None
+    else:
+      return self.__list.get_element_at(0)
 
   def push_back(self, val):
     #append element
@@ -43,7 +46,10 @@ class Linked_List_Deque(Deque):
 
   def peek_back(self):
     #get element at index length-1
-    return self.__list.get_element_at( len(self.__list) - 1 )
+    if len(self.__list) == 0:
+      return None
+    else:
+      return self.__list.get_element_at( len(self.__list) - 1 )
 
 # Unit tests make the main section unneccessary.
 #if __name__ == '__main__':

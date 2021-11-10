@@ -96,8 +96,10 @@ class Array_Deque(Deque):
     
   def peek_front(self):
     # replace pass with your implementation.
-
-    return self.__contents[self.__front_index]
+    if self.__length == 0:
+      return None
+    else:
+      return self.__contents[self.__front_index]
     
   def push_back(self, val):
     # replace pass with your implementation, growing the array before
@@ -114,7 +116,7 @@ class Array_Deque(Deque):
     # replace pass with your implementation. Do not reduce the capacity.
 
     #check if array is empty, if it is, raise error
-    if (self.__length == 0):
+    if self.__length == 0:
       raise IndexError
 
     #pop operations return the value that is removed
@@ -128,8 +130,10 @@ class Array_Deque(Deque):
 
   def peek_back(self):
     # replace pass with your implementation.
-
-    return self.__contents[self.__back_index]
+    if self.__length == 0:
+      return None
+    else:
+      return self.__contents[self.__back_index]
 
 # No main section is necessary. Unit tests take its place.
 #if __name__ == '__main__':
