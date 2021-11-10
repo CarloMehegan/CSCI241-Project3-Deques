@@ -3,8 +3,23 @@ from Stack import Stack
 
 def Hanoi_rec(n, s, a, d):
   print(n, s, a, d)
-  # TODO replace pass with your base and recursive cases.
-  pass
+  # # TODO replace pass with your base and recursive cases.
+  # #base case: one ring to move
+  #     #move ring to goal stack
+  # #recursive case: more than one ring to move
+  #     #call 
+  # pass
+  if n == 1:
+    d.push(s.pop())
+  else:
+    #move n-1 to aux
+    Hanoi_rec(n-1, s, d, a)
+    #move n to goal
+    d.push(s.pop())
+    #move n-1 to goal
+    Hanoi_rec(n-1, a, s, d)
+
+
   print(n, s, a, d)
   print()
 
