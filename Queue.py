@@ -6,24 +6,22 @@ class Queue:
     self.__dq = get_deque()
 
   def __str__(self):
-    # TODO replace pass with your implementation.
-    pass
+    #string of a queue should look the same as a deque
+    #we will enqueue at the back, which will be the end of the string
+    #and dequeue at the front, which will be the beginning of the string
+    return str(self.__dq)
 
   def __len__(self):
-    # TODO replace pass with your implementation.
-    pass
+    return len(self.__dq)
 
   def enqueue(self, val):
-    # TODO replace pass with your implementation.
-    pass
+    self.__dq.push_back(val)
 
   def dequeue(self):
-    # TODO replace pass with your implementation.
-    pass
+    return self.__dq.pop_front()
 
   def peek(self):
-    # TODO replace pass with your implementation.
-    pass
+    return self.__dq.peek_front()
 
 # Unit tests make the main section unneccessary.
 #if __name__ == '__main__':
