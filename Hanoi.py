@@ -9,7 +9,7 @@ def Hanoi_rec(n, s, a, d):
   # #recursive case: more than one ring to move
   #     #call 
   # pass
-  if n == 1:
+  if n == 0:
     d.push(s.pop())
   else:
     #move n-1 to aux
