@@ -3,7 +3,7 @@ from Deque_Generator import get_deque
 from Queue import Queue
 from Stack import Stack
 
-class Linked_Lest_Tester(unittest.TestCase):
+class DSQ_Tester(unittest.TestCase):
 
   def setUp(self):
     self.__dq = get_deque()
