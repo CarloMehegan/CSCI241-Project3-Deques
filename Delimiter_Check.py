@@ -4,15 +4,23 @@ from Stack import Stack
 def delimiter_check(filename):
   # replace pass with an implementation that returns True
   # if the delimiters (), [], and {} are balanced and False otherwise.
+
+  #initialize variables
+  #read the file with open() and store its contents in a string
   passed = True
   s = Stack()
   f = open(filename, "r")
   string = f.read()
 
+  #iterate through every character in string, checking for delimiters
   for val in string:
+    #if open delimiter, push to stack
     if (val == "(" or val == "[" or val == "{"):
       s.push(val)
 
+    #if closed delimiter, check if the top of the stack
+    #is a matching opening delimiter. if it is, pop the stack.
+    #if it isn't, closing delimiters are imbalanced
     elif (val == ")"):
       if (s.peek() == "("):
         s.pop()
@@ -29,10 +37,14 @@ def delimiter_check(filename):
       else:
         passed = False
   
+  #finally, check if the stack is empty. if it isn't,
+  #if it isn't, opening delimiters are imbalanced
   print(str(s))
   if (str(s) != "[ ]"):
     passed = False
   
+  #passed defaults to True, and changes to False if the
+  #tests above find imbalanced delimiters anywhere
   return passed
     
 
