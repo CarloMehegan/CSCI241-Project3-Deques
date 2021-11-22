@@ -83,7 +83,7 @@ class Linked_List:
         
         #if LL is empty, cannot remove
         if self.header.next == self.trailer:
-            raise IndexError
+            return
         #if index is greater than or equal to size, it is out of bounds
         #if index is less than zero, it is out of bounds
         if index >= self.size or index < 0:
