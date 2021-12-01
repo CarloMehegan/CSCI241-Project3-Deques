@@ -27,7 +27,10 @@ class Linked_List_Deque(Deque):
   
   def pop_front(self):
     #remove element at index 0
-    return self.__list.remove_element_at(0)
+    if len(self.__list) == 0:
+      return None
+    else:
+      return self.__list.remove_element_at(0)
 
   def peek_front(self):
     #get element at index 0
@@ -42,7 +45,10 @@ class Linked_List_Deque(Deque):
   
   def pop_back(self):
     #remove element at index length-1
-    return self.__list.remove_element_at( len(self.__list) - 1 )
+    if len(self.__list) == 0:
+      return None
+    else:
+      return self.__list.remove_element_at( len(self.__list) - 1 )
 
   def peek_back(self):
     #get element at index length-1
