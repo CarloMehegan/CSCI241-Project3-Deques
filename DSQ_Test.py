@@ -622,7 +622,7 @@ class DSQ_Tester(unittest.TestCase):
   def test_stack_push_two(self):
     self.__s.push(0)
     self.__s.push(1)
-    self.assertEqual('[ 0, 1 ]', str(self.__s))
+    self.assertEqual('[ 1, 0 ]', str(self.__s))
 
   def test_stack_push_one_pop_one(self):
     self.__s.push(0)
